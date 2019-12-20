@@ -1,0 +1,18 @@
+#CoUsers{
+
+    float: left;
+    border: 10px ridge;
+    background-color: slategrey;
+}
+#CoAdmin{
+
+    float: right;
+    border: 10px ridge;
+    background-color: slategrey;
+}
+#image_1{
+
+    background-image: url(/voiture_1.jpg);
+    float: left;
+    background-size: cover;
+}
