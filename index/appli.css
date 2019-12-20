@@ -3,16 +3,14 @@
     float: left;
     border: 10px ridge;
     background-color: slategrey;
+    width: 25vw;
+    height: 25vh;
 }
 #CoAdmin{
 
     float: right;
     border: 10px ridge;
     background-color: slategrey;
-}
-#image_1{
-
-    background-image: url(/voiture_1.jpg);
-    float: left;
-    background-size: cover;
+    width: 25vw;
+    height: 25vh;
 }

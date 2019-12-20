@@ -9,9 +9,11 @@
             <div id="CoUsers">
                 <form action="index.php" method="POST"> 
                 <p><label>Nom De Connexion</label>
-                <input type="text" name="NDC_1"/></p> 
+                <input type="text" name="NDC_1"/></p>
+                <p> </p> 
                 <p><label>Mot De Passe</label>
                 <input type="password" name="MDP_1"/></p>
+                <p> </p>
                 <input type="submit" name="valider" value="cliquer sur valider"/>
                 </form>
 <?php
@@ -39,9 +41,11 @@
             <div id="CoAdmin">
                 <form action="index.php" method="POST"> 
                 <p><label>Nom De Connexion</label>
-                <input type="text" name="NDC_2"/></p> 
+                <input type="text" name="NDC_2"/></p>
+                <p> </p> 
                 <p><label>Mot De Passe</label>
                 <input type="password" name="MDP_2"/></p>
+                <p> </p>
                 <input type="submit" name="valider" value="cliquer sur valider"/>
                 </form>
 <?php
