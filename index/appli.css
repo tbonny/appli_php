@@ -1,16 +1,24 @@
+html {height:100%;}
+body {height:100%;
+padding: 0%; margin: 0%;
+background-color: black;
+background-image: url(Need-for-Speed-heat2.jpg);
+background-size: cover;
+}
+*{
+  font-family:'Times New Roman', Times, serif;
+}
 #CoUsers{
 
     float: left;
     border: 10px ridge;
-    background-color: slategrey;
-    width: 25vw;
-    height: 25vh;
-}
-#CoAdmin{
+    background-color: rgb(48, 98, 148);
+    width: 38vw;
+    height: 38vh;
+    padding-top: 20px;
+    padding-left: 20px;
+    position: absolute; 
+    top: 25%; left: 27%; 
+    color: rgb(255, 255, 255);
 
-    float: right;
-    border: 10px ridge;
-    background-color: slategrey;
-    width: 25vw;
-    height: 25vh;
 }

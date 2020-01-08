@@ -6,7 +6,8 @@
 }
 
 .recherche{
-    text-align: left;
+	text-align: left;
+	margin: 6px;
 }
 
 .bouton{
@@ -25,8 +26,12 @@
 	height: 100%;
 }
 
+.bigdiv2{
+	background-image: url("fond_site.JPG");
+}
+
 .ultradiv{
-	background-image: url(fond_ferrari_2.jpg);
+	background-color: teal;
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 200%;
