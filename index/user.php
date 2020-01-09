@@ -3,10 +3,7 @@ class user{
     //propriétes:
     private $_nom;
     private $_MDP;
-    private $_requete;
-    private $_p1;
-    private $_p2;
-    private $_id;
+    
 
     //méthodes:
     public function __construct(){
@@ -50,7 +47,7 @@ class user{
         }
         
     }
-    public function Compar($NDC, $MDP){
+    public function Compar2($NDC, $MDP){
         if($NDC == $this->_nom){
             if($MDP == $this->_MDP){
                 return true;

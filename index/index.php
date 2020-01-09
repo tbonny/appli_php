@@ -33,6 +33,41 @@
             </div>
             </div>
             <div id="center">
+            <div id="presentation" align="center">
+                <h2><p>Bonjour, bienvenue sur notre appli de recherche de voiture</p><p>Si vous etes nouveau veuillez vous creez un compte. <p>Sinon, vous pouvez vous connectez.</p></h2>
+            </div>
+            <div id="CoAdmin" align="center">  
+                <h3>ADMINS</h3>
+                <form action="index.php" method="POST"> 
+                <p><label>Identifiants de Connexion</label>
+                <input type="text" name="NDC_3"/></p>
+                <p><label>Mot De Passe</label>
+                <input type="password" name="MDP_3"/></p>
+                <input type="submit" name="valider2" value="cliquer sur valider"/><!--Formulaire de connexion-->
+                </form>
+<?php
+                if(empty($_POST['NDC_3']) && empty($_POST['MDP_3'])){
+                
+
+                    }else{
+                    
+                    $admin = new admin();
+                    $admin->adminCo($_POST['NDC_3'] , $_POST['MDP_3']);
+                    $isconnectUS = $admin->Compar1($_POST['NDC_3'],$_POST['MDP_3']);
+                    if($isconnectUS){?><!--permets de se connecter si les identifiants sont deja présenst dans la BDD--><?php
+
+                    echo"admin connectez."; 
+                    
+                    ?><p><input type="button" name="lien1" value="redirection" onclick="self.location.href='../page_admin/page_admin.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick></p><?php
+                             
+                    }else{
+                        
+                        echo"Identifiants incorrects, veuillez reessayer.";
+
+                    }
+                }
+?>        
+            </div>
             
             </div>
             <div id="right">
@@ -55,7 +90,7 @@
                     
                     $user = new user();
                     $user->usersCo($_POST['NDC_2'] , $_POST['MDP_2']);
-                    $isconnectUS = $user->Compar($_POST['NDC_2'],$_POST['MDP_2']);
+                    $isconnectUS = $user->Compar2($_POST['NDC_2'],$_POST['MDP_2']);
                     if($isconnectUS){?><!--permets de se connecter si les identifiants sont deja présenst dans la BDD--><?php
 
                     echo"vous etes connectez."; 
