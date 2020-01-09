@@ -69,7 +69,7 @@ class voitures {
         echo "<p> date de construction du véhicule : ".$this->getdate()."</p>";
         echo "<p> pays d'origine du véhicule : ".$this->getorigine()."</p>";
         echo "<p> type de moteur du véhicule : ".$this->getmoteur()."</p>";
-        echo "<p> prix du véhicule : ".$this->getprix()."</p>";
+        echo "<p> prix du véhicule : ".$this->getprix()." €</p>";
         
     }
 

@@ -2,23 +2,43 @@ html {height:100%;}
 body {height:100%;
 padding: 0%; margin: 0%;
 background-color: black;
-background-image: url(Need-for-Speed-heat2.jpg);
-background-size: cover;
+background-image: url(Need-for-Speed-heat.jpg);
+width: auto;
+height: auto;
 }
 *{
   font-family:'Times New Roman', Times, serif;
 }
-#CoUsers{
+#left{
+  float: left;
+  width: 32%;
+  height: 100%;
+}
+#right{
+  float: right;
+  width: 32%;
+  height: 100%;
+
+}
+#center{
+  float: left;
+  width: 36%;
+  height: 100%;
+
+}
+.CoUsers{
 
     float: left;
     border: 10px ridge;
     background-color: rgb(48, 98, 148);
-    width: 38vw;
-    height: 38vh;
-    padding-top: 20px;
-    padding-left: 20px;
-    position: absolute; 
-    top: 25%; left: 27%; 
+    margin-top: 50%;
     color: rgb(255, 255, 255);
+    width: 97%
 
+
+}
+#presentation{
+  float: left;
+    border: 10px ridge;
+    background-color: rgb(48, 98, 148);
 }
