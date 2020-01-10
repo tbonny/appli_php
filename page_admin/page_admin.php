@@ -5,39 +5,52 @@
         <link rel="stylesheet" type="text/css" href="admin.css">
     </head>
         <body>
-            <div id="update">
+            <div id="update" align="center">
             <div class="titre">
                     <h1>UPDATE</h1>
                 </div>
+                <div class="gestion">
                 <form action="page_admin.php" method="POST">
                         <p>modifier un véhicule :</p>
                          <p>nom :
-                         <input type="text" name="nom"></p>
+                         <input type="text" name="nom"/></p>
                          <p>marque :
-                         <input type="text" name="marque"></p>
+                         <input type="text" name="marque"/></p>
                          <p>date de construction :
-                         <input type="text" name="date_constru"></p>
+                         <input type="text" name="date_constru"/></p>
                          <p>pays d'origine :
-                         <input type="text" name="origine"></p>
+                         <input type="text" name="origine"/></p>
                          <p>type de moteur :
-                         <input type="text" name="moteur"></p>
+                         <input type="text" name="moteur"/></p>
                          <p>prix :
-                         <input type="text" name="prix"></p>
+                         <input type="text" name="prix"/></p>
 
                          <p>liens image :
-                         <input type="text" name="image"></p>
+                         <input type="text" name="image"/></p>
 
-                         <input class="bouton" type="submit" name="ajouter" value="ajouter">
+                         <input class="bouton" type="submit" name="ajouter" value="modifier"/>
                     </form>
 
                     <?php
                         if (isset ($_POST ['nom']) && !empty($_POST ['nom']) && ($_POST ['marque']) && !empty($_POST ['marque']) && ($_POST ['date_constru']) && !empty($_POST ['date_constru']) && ($_POST ['origine']) && !empty($_POST ['origine']) && ($_POST ['moteur']) && !empty($_POST ['moteur']) && ($_POST ['prix']) && !empty($_POST ['prix']) && ($_POST ['image']) && !empty($_POST ['image'])){
-                            $ajout = new update();
-                            $ajout -> update($_POST ['nom'], $_POST ['marque'], $_POST ['date_constru'], $_POST ['origine'], $_POST ['moteur'], $_POST ['prix'], $_POST ['image']);
-                        } 
+                            
+                            $update = new update($_POST ['nom'], $_POST ['marque'], $_POST ['date_constru'], $_POST ['origine'], $_POST ['moteur'], $_POST ['prix'], $_POST ['image']);
+
+                                $nom = $_POST ['nom'];
+                                $marque =  $_POST ['marque'];
+                                $date = $_POST ['date_constru'];
+                                $origine = $_POST ['origine'];
+                                $moteur = $_POST ['moteur'];
+                                $prix = $_POST ['prix'];
+                                $image = $_POST ['image'];
+                            
+                            $update -> update($nom, $marque, $date,  $origine, $moteur, $prix, $image);
+                            echo"vehicule mise a jour";
+                            
+                        }
                     ?>
                 
-
+            </div>
             </div>
             <div id="delete" align="center">
                 <div class="titre">
@@ -57,7 +70,7 @@
                     $admin = new gestion();
                     $admin->adminDelete($_POST['Nom']);
                     
-                    echo"voiture supprimer"; 
+                    echo"voiture supprimer";
                     
                     
                 }
