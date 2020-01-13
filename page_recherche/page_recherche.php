@@ -10,19 +10,19 @@ require ("ajout.php");
     </head>
 
     <body>
-        <div class = "ultradiv">
+        <div class = "ultradiv"> <!-- div principale -->
             <div>
                 <p class="title">BIENVENUE</p>
             </div>
                 <div class="bigdiv">
-                <form action="page_recherche.php" method="POST">
+                <form action="page_recherche.php" method="POST"> <!-- methode pour recuperer la recherche -->
                         recherche : 
                         <input type="text" name="recherche">
 
                         <input class="bouton" type="submit" name="valider" value="valider">
                     </form>
                         <?php
-                        if (isset ($_POST ['recherche']) && !empty($_POST ['recherche'])){
+                        if (isset ($_POST ['recherche']) && !empty($_POST ['recherche'])){ //on s'assure que le champ n'est pas vide
                             $nomvoiture = $_POST ['recherche'];
                         
                             $vehicule = new voitures($nomvoiture);
@@ -31,8 +31,8 @@ require ("ajout.php");
                         } 
                     ?>
 
-                    <div class="bigdiv2">
-                    <form action="page_recherche.php" method="POST">
+                    <div class="bigdiv2"> <!-- ajouter un vehicule -->
+                    <form action="page_recherche.php" method="POST"> <!-- on recupere les infos du nouveau vehicule -->
                         <p>insérer un nouveau véhicule :</p>
                          <p>nom :
                          <input type="text" name="nom"></p>

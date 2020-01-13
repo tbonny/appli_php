@@ -1,12 +1,7 @@
 <?php
 class ajout {
-    private $_nom;
-    private $_marque;
-    private $_date_construction;
-    private $_pays_origine;
-    private $_type_moteur;
-    private $_PRIX;
-    private $_image;
+
+//la fonction permettant d'ajouter un véhicule dans le wiki
 
     public function ajouter($nom, $marque, $date_construction, $pays_origine, $type_moteur, $prix, $image)
     {
