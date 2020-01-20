@@ -2,6 +2,7 @@
 //
 class voitures {
 
+    private $_id;
     private $_nom;
     private $_marque;
     private $_date_construction;
@@ -34,7 +35,10 @@ class voitures {
 
            
     }
-
+    public function getId(){
+        return $this->_id;
+    }
+        
     public function update($nom, $marque, $date_construction, $pays_origine, $type_moteur, $prix, $image) //mise à jour véhicule, appel de la base de donnée
     {
         try{
