@@ -24,7 +24,6 @@
                          <input type="text" name="moteur"/></p>
                          <p>prix :
                          <input type="text" name="prix"/></p>
-
                          <p>liens image :
                          <input type="text" name="image"/></p>
 
