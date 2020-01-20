@@ -16,22 +16,18 @@ class voitures {
         try{
             $BDD = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP;
             charset=utf8','admin', 'admin');
-            $infoBDD = $BDD ->query('select * from voitures where nom="'.$nom.'"');
-            $infoBDD = $infoBDD->fetch();
-
-            $this->_nom = $infoBDD['nom'];
-            $this->_marque = $infoBDD['marque'];
-            $this->_date_construction = $infoBDD['date_construction'];
-            $this->_pays_origine = $infoBDD['pays_origine'];
-            $this->_type_moteur = $infoBDD['type_moteur'];
-            $this->_PRIX = $infoBDD['prix'];
-            $this->_image = $infoBDD['imagevoiture'];
-
-           }
-
-           catch (Exception $erreur){
-            echo 'Erreur : '.$erreur ->getMessage();
-           }
+            $DonneeBruteUser = $BDD->query("select * from `voitures`");
+            $TabUserIndex = 0;
+            while ($tab = $DonneeBruteUser->fetch()){
+            //ici on creer nos objets User pour chaque tuple de notre requête
+            //et on les places dans un tableau de User
+            $TabUser[$TabUserIndex++] = new voitures($tab['id_voitures'],$tab['nom']);
+               
+            }
+            }
+            catch(exception $e) {
+            $e->getMessage();
+            }
 
            
     }

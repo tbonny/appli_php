@@ -15,21 +15,28 @@ require ("ajout.php");
                 <p class="title">BIENVENUE</p>
             </div>
                 <div class="bigdiv">
-                <form action="page_recherche.php" method="POST"> <!-- methode pour recuperer la recherche -->
-                        recherche : 
-                        <input type="text" name="recherche">
-
-                        <input class="bouton" type="submit" name="valider" value="valider">
-                    </form>
+                <FORM action="" methode="POST">
+ <select name="pets" id="pet-select">
+ <?php
+ //parcours du tableau de User pour afficher les options de la liste déroulante
+ foreach ($TabUser as $objetUser) {
+ echo '<option value="'.$objetUser->getId().'">'.$objetUser->getnom().'</option>';
+ }
+ ?>
+ </select>
+ <input type="submit"></input>
+ </FORM>
                         <?php
-                        if (isset ($_POST ['recherche']) && !empty($_POST ['recherche'])){ //on s'assure que le champ n'est pas vide
-                            $nomvoiture = $_POST ['recherche'];
-                        
-                            $vehicule = new voitures($nomvoiture);
-                            $vehicule -> afficherinfo();
-                            $vehicule->afficherimage();
-                        } 
-                    ?>
+                        if (isset($_POST["user"])){
+                            //recherche de l'id dans le tableau de user
+                            foreach ($TabUser as $objetUser) {
+                            if ($objetUser->getId()==$_POST["user"]){
+                            $objetUser->getnom();
+                            }
+                            }
+                           
+                            }else{echo"Aucun user selectionné";}
+                        ?>
 
                     <div class="bigdiv2"> <!-- ajouter un vehicule -->
                     <form action="page_recherche.php" method="POST"> <!-- on recupere les infos du nouveau vehicule -->
