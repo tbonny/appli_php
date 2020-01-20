@@ -10,7 +10,7 @@
                     <h1>UPDATE</h1>
                 </div>
                 <div class="gestion">
-                <form action="page_admin.php" method="POST">
+                <form action="page_admin.php" method="POST"> <!-- affichage de la partie update -->
                         <p>modifier un véhicule :</p>
                          <p>nom :
                          <input type="text" name="nom"/></p>
@@ -45,7 +45,7 @@
                                 $image = $_POST ['image'];
                             
                             $update -> update($nom, $marque, $date,  $origine, $moteur, $prix, $image);
-                            echo"vehicule mise a jour";
+                            echo"vehicule mis à jour";
                             
                         }
                     ?>
@@ -56,7 +56,7 @@
                 <div class="titre">
                     <h1>DELETE</h1>
                 </div>
-                <div class="gestion">
+                <div class="gestion"> <!-- affichage de la partie delete -->
                 <form action="page_admin.php" method="POST"> 
                     <p><label>quel voiture voulez-vous supprimer de la BDD ?</label></p>
                     <p><input type="text" name="Nom"/></p>
@@ -67,10 +67,10 @@
                 
                     }else{
                     
-                    $admin = new gestion();
+                    $admin = new gestion();  //appel de la base
                     $admin->adminDelete($_POST['Nom']);
                     
-                    echo"voiture supprimer";
+                    echo"voiture supprimée";
                     
                     
                 }

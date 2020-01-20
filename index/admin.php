@@ -12,7 +12,7 @@ class admin{
         echo"<p>Votre Nom de connexion est : ".$this->_MDP."</p>";
         
     }
-    public function adminCo($NDC, $MDP){
+    public function adminCo($NDC, $MDP){//Fonction qui permet au admins de se connecter
 
         try
         {
@@ -29,7 +29,7 @@ class admin{
         }
         
     }
-    public function Compar1($NDC, $MDP){
+    public function Compar1($NDC, $MDP){//compare les id et mdp recuperer avec ceux present en BDD
         if($NDC == $this->_nom){
             if($MDP == $this->_MDP){
                 return true;

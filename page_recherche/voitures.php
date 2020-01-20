@@ -1,4 +1,5 @@
 <?php
+//
 class voitures {
 
     private $_nom;
@@ -8,7 +9,7 @@ class voitures {
     private $_type_moteur;
     private $_PRIX;
     private $_image;
-
+    //
     public function __construct($nom)
     {
         try{
@@ -32,6 +33,18 @@ class voitures {
            }
 
            
+    }
+
+    public function update($nom, $marque, $date_construction, $pays_origine, $type_moteur, $prix, $image) //mise à jour véhicule, appel de la base de donnée
+    {
+        try{
+            $BDD = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
+            $BDD ->query('UPDATE `voitures` SET `nom`="'.$nom.'",`marque`="'.$marque.'",`date_construction`="'.$date_construction.'",`pays_origine`="'.$pays_origine.'",`type_moteur`="'.$type_moteur.'",`prix`="'.$prix.'",`imagevoiture`="'.$image.'" WHERE `nom`="'.$nom.'"');
+           }
+
+           catch (Exception $erreur){
+            echo 'Erreur : '.$erreur ->getMessage();
+           }
     }
 
     public function getnom(){
@@ -62,6 +75,7 @@ class voitures {
         return $this->_image;
     }
 
+    //
     public function afficherinfo(){
 
         echo "<p> nom du véhicule : ".$this->getnom()."</p>";
@@ -73,6 +87,7 @@ class voitures {
         
     }
 
+    //
     public function afficherimage(){
         echo "<img src = '".$this->getimage()."'>";
     }

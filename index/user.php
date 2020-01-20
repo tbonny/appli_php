@@ -16,7 +16,7 @@ class user{
         echo"<p>Votre Nom de connexion est : ".$this->_nom."</p>";
         
     }
-    public function UsersNv($NDC, $MDP){
+    public function UsersNv($NDC, $MDP){//Fonction qui creer un nouvelle utiliateur
 
         try
         {
@@ -30,7 +30,7 @@ class user{
         }
         
     }
-    public function usersCo($NDC, $MDP){
+    public function usersCo($NDC, $MDP){//Fonction qui permet au utilisateur deja creer de se connecter
 
         try
         {
@@ -47,7 +47,7 @@ class user{
         }
         
     }
-    public function Compar2($NDC, $MDP){
+    public function Compar2($NDC, $MDP){ //compare les id et mdp recuperer avec ceux present en BDD
         if($NDC == $this->_nom){
             if($MDP == $this->_MDP){
                 return true;

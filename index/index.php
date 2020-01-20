@@ -7,10 +7,10 @@
         <body>
             <div id="connexion">
             <div id="left">
-            <div class="CoUsers" align="center"> 
+            <div class="CoUsers" align="center"> <!-- Creation d'un nouveau compte client de base-->
                 <h1>Creer votre compte</h1> 
                 <form action="index.php" method="POST"> 
-                <p><label><h3>Nouvelle Identifiants</h3></label>
+                <p><label><h3>Nouvel Identifiant</h3></label>
                 <input type="text" name="NDC_1"/></p>
                 <p> </p> 
                 <p><label><h3>Mot De Passe</h3></label>
@@ -21,7 +21,7 @@
 <?php
                 if(empty($_POST['NDC_1']) && empty($_POST['MDP_1'])){
       
-                }else{
+                }else{ //creer le compte via la function UserNv
                     
                     $user = new user();
                     $user->UsersNv($_POST['NDC_1'] , $_POST['MDP_1']);
@@ -33,10 +33,10 @@
             </div>
             </div>
             <div id="center">
-            <div id="presentation" align="center">
-                <h2><p>Bonjour, bienvenue sur notre appli de recherche de voiture</p><p>Si vous etes nouveau veuillez vous creez un compte. <p>Sinon, vous pouvez vous connectez.</p></h2>
+            <div id="presentation" align="center"><!-- texte de presentation de l'appli-->
+                <h2><p>Bonjour, bienvenue sur notre appli de recherche de voiture</p><p>Si vous etes nouveau veuillez vous creer un compte. <p>Sinon, vous pouvez vous connecter.</p></h2>
             </div>
-            <div id="CoAdmin" align="center">  
+            <div id="CoAdmin" align="center">  <!-- Connexion en tant qu'administrateur-->
                 <h3>ADMINS</h3>
                 <form action="index.php" method="POST"> 
                 <p><label>Identifiants de Connexion</label>
@@ -60,7 +60,7 @@
                     
                     ?><p><input type="button" name="lien1" value="redirection" onclick="self.location.href='../page_admin/page_admin.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick></p><?php
                              
-                    }else{
+                    }else{ //meesage d'erreur si les Id et Mdp sont incorrects
                         
                         echo"Identifiants incorrects, veuillez reessayer.";
 
@@ -71,7 +71,7 @@
             
             </div>
             <div id="right">
-            <div class="CoUsers" align="center">  
+            <div class="CoUsers" align="center">  <!-- Connexion client de base-->
                 <h1>Vous connectez</h1>
                 <form action="index.php" method="POST"> 
                 <p><label><h3>Identifiants de Connexion</h3></label>
@@ -97,7 +97,7 @@
                     
                     ?><p><input type="button" name="lien1" value="redirection" onclick="self.location.href='../page_recherche/page_recherche.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick></p><?php
                              
-                    }else{
+                    }else{ //meesage d'erreur si les Id et Mdp sont incorrects
                         
                         echo"Identifiants incorrects, veuillez reessayer.";
 

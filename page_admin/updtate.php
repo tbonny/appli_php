@@ -1,7 +1,7 @@
 <?php
 class update {
 
-    public function update($nom, $marque, $date_construction, $pays_origine, $type_moteur, $prix, $image)
+    public function update($nom, $marque, $date_construction, $pays_origine, $type_moteur, $prix, $image) //mise à jour véhicule, appel de la base de donnée
     {
         try{
             $BDD = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
