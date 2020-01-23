@@ -48,6 +48,7 @@
                             
                         }
                     ?>
+                 
                 
             </div>
             </div>
@@ -89,14 +90,16 @@
                                 $objetUser = new gestion();  //appel de la base
                                 $objetUser->adminDelete($_POST['cars']);
                                 
-                                echo"voiture supprimée";
-                            }
-                            }
+                                        echo"voiture supprimée";
+                                    }
+                                }
                         
                             }else{echo"Aucune voiture selectionné";}
                     ?>
+                    
 
             </div>
+            <a href="../index/index.php"><button class="bouton">retour à l'acceuil</button></a>
             </div>
 
 

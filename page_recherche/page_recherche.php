@@ -16,6 +16,8 @@ require ("ajout.php");
                 <p class="title">BIENVENUE</p>
             </div>
                 <div class="bigdiv">
+                <a href="../index/index.php"><button class="bouton">retour à l'acceuil</button></a>
+                <p><h1>selectionner une voiture pour afficher ses informations.</h1></p>
                     <?php
                             try {
                                 $base = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
@@ -85,7 +87,7 @@ require ("ajout.php");
                     </div>
                 </div>
 
-
+                
         </div>
     </body>
 </html>

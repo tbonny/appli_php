@@ -13,11 +13,11 @@
 .bouton{
 	width:85px;
 	height:85px;
-	background:#0f0f0f;
+	background:#ffffff;
 	box-shadow:2px 2px 8px rgb(88, 88, 88);
 	font:bold 13px Arial;
 	border-radius:50%;
-	color:rgb(255, 255, 255);
+	color:rgb(0, 0, 0);
 }
 
 .bigdiv{
