@@ -1,5 +1,6 @@
 <?php
 require ("voitures.php");
+require ("liste.php");
 require ("ajout.php");
 ?>
 
@@ -15,20 +16,43 @@ require ("ajout.php");
                 <p class="title">BIENVENUE</p>
             </div>
                 <div class="bigdiv">
-                <form action="page_recherche.php" method="POST"> <!-- methode pour recuperer la recherche -->
-                        recherche : 
-                        <input type="text" name="recherche">
+                    <?php
+                            try {
+                                $base = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
+                                $DonneeBruteUser = $base->query("select * from voitures");
+                                $TabUserIndex = 0;
+                                while ($tab = $DonneeBruteUser->fetch()){
+                                $TabUser[$TabUserIndex++] = new cars($tab['id_voiture'],$tab['nom']);
+                                }
+                                }
+                                catch(exception $e) {
+                                $e->getMessage();
+                                }
+                    ?>   
 
-                        <input class="bouton" type="submit" name="valider" value="valider">
-                    </form>
+                        <FORM action="" methode="POST">
+                        <select name="cars" id="pet-select">
                         <?php
-                        if (isset ($_POST ['recherche']) && !empty($_POST ['recherche'])){ //on s'assure que le champ n'est pas vide
-                            $nomvoiture = $_POST ['recherche'];
+                        foreach ($TabUser as $objetUser) {
+                        echo '<option value="'.$objetUser->getIdvoitures().'">'.$objetUser->getNom().'</option>';
+                        }
+                        ?>
+                        </select>
+                        <input type="submit"></input>
+                        </FORM>
+
+                    <?php                    
+                        if (isset($_POST["cars"])){
+                            
+                            foreach ($TabUser as $objetUser) {
+                            if ($objetUser->getIdvoitures($_POST["cars"])){
+                            $objetUser=new voitures($_POST["cars"]);
+                            $objetUser->afficherinfo();
+                            $objetUser->afficherimage();
+                            }
+                            }
                         
-                            $vehicule = new voitures($nomvoiture);
-                            $vehicule -> afficherinfo();
-                            $vehicule->afficherimage();
-                        } 
+                            }else{echo"Aucune voiture selectionné";}
                     ?>
 
                     <div class="bigdiv2"> <!-- ajouter un vehicule -->

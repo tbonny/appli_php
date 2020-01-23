@@ -1,5 +1,4 @@
 <?php require("gestion.php");?>
-<?php require("updtate.php");?>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="admin.css">

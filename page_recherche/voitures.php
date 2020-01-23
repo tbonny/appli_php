@@ -15,7 +15,7 @@ class voitures {
         try{
             $BDD = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP;
             charset=utf8','admin', 'admin');
-            $infoBDD = $BDD ->query('select * from voitures where nom="'.$nom.'"');
+            $infoBDD = $BDD ->query('select * from voitures where id_voiture="'.$nom.'"');
             $infoBDD = $infoBDD->fetch();
 
             $this->_nom = $infoBDD['nom'];
