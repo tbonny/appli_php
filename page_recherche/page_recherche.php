@@ -30,7 +30,7 @@ require ("ajout.php");
                                 }
                     ?>   
 
-                        <FORM action="" methode="POST">
+                        <FORM action="" method="POST">
                         <select name="cars" id="pet-select">
                         <?php
                         foreach ($TabUser as $objetUser) {
@@ -45,7 +45,7 @@ require ("ajout.php");
                         if (isset($_POST["cars"])){
                             
                             foreach ($TabUser as $objetUser) {
-                            if ($objetUser->getIdvoitures($_POST["cars"])){
+                            if ($objetUser->getIdvoitures()==$_POST["cars"]){
                             $objetUser=new voitures($_POST["cars"]);
                             $objetUser->afficherinfo();
                             $objetUser->afficherimage();
