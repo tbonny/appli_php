@@ -60,9 +60,9 @@
                     
                     ?><p><input type="button" name="lien1" value="redirection" onclick="self.location.href='../page_admin/page_admin.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick></p><?php
                              
-                    }else{ //meesage d'erreur si les Id et Mdp sont incorrects
+                    }else{ //message d'erreur si les Id et Mdp sont incorrects
                         
-                        echo"Identifiants incorrects, veuillez reessayer.";
+                        echo"Identifiants ou mot de passe incorrects, veuillez reessayer.";
 
                     }
                 }
@@ -99,7 +99,7 @@
                              
                     }else{ //meesage d'erreur si les Id et Mdp sont incorrects
                         
-                        echo"Identifiants incorrects, veuillez reessayer.";
+                        echo"Identifiants ou mot de passe incorrects, veuillez reessayer.";
 
                     }
                 }

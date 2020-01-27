@@ -16,8 +16,9 @@ require ("ajout.php");
                 <p class="title">BIENVENUE</p>
             </div>
                 <div class="bigdiv">
+                <div id="text">
                 <a href="../index/index.php"><button class="bouton">retour à l'acceuil</button></a>
-                <p><h1>selectionner une voiture pour afficher ses informations.</h1></p>
+                <p><h1>Selectionner une voiture pour afficher ses informations.</h1></p>
                     <?php
                             try {
                                 $base = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
@@ -56,6 +57,8 @@ require ("ajout.php");
                         
                             }else{echo"Aucune voiture selectionné";}
                     ?>
+                </div>
+                
 
                     <div class="bigdiv2"> <!-- ajouter un vehicule -->
                     <form action="page_recherche.php" method="POST"> <!-- on recupere les infos du nouveau vehicule -->
