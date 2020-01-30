@@ -9,7 +9,7 @@ class gestion{
         {
             $maBase=new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP;
             charset=utf8','siteweb1', 'siteweb1');
-            $LesNVusers=$maBase->query('DELETE FROM `voitures` WHERE `id_voiture`= "'.$delete.'"');   
+            $maBase->query('DELETE FROM `voitures` WHERE `id_voiture`="'.$delete.'"');   
         }    
             catch (Exception $erreur){
                 echo 'Erreur : '.$erreur ->getMessage();
@@ -28,5 +28,19 @@ class gestion{
             echo 'Erreur : '.$erreur ->getMessage();
            }
     }
+
+    public function ajoutadmin($add) //mise à jour véhicule, appel de la base de donnée
+    {
+        try{
+            $BDD = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
+            $BDD ->query('');
+           }
+
+           catch (Exception $erreur){
+            echo 'Erreur : '.$erreur ->getMessage();
+           }
+    }
 }
+
+
 ?>

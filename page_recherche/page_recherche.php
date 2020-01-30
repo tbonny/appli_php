@@ -8,12 +8,14 @@ require ("ajout.php");
     <head>
         <title>bienvenue</title>
         <link rel="stylesheet" href="page_recherche_style.css">
+        <script type="text/javascript" src="page_recherchejs.js"> </script>
     </head>
 
     <body>
         <div class = "ultradiv"> <!-- div principale -->
             <div>
-                <p class="title">BIENVENUE</p>
+            
+                <p class="title"> <text href="page_recherchejs.js" id="bienvenue" onclick="changerdiv()">BIENVENUE</text><br><img id="imgchange" src='symbole_voiture_2.jpg'  onmouseover="src='symbole_voiture_1.jpg'" onmouseout="src='symbole_voiture_2.jpg'"></p>
             </div>
                 <div class="bigdiv">
                 <div id="text">
@@ -49,10 +51,10 @@ require ("ajout.php");
                             
                             foreach ($TabUser as $objetUser) {
                             if ($objetUser->getIdvoitures()==$_POST["cars"]){
-                            $objetUser=new voitures($_POST["cars"]);
-                            $objetUser->afficherinfo();
-                            $objetUser->afficherimage();
-                            }
+                                    $objetUser=new voitures($_POST["cars"]);
+                                    $objetUser->afficherinfo();
+                                    $objetUser->afficherimage();
+                                }
                             }
                         
                             }else{echo"Aucune voiture selectionné";}

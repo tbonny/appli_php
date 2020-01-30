@@ -1,5 +1,6 @@
 <?php require("gestion.php");?>
 <?php require("liste_admin.php")?>
+<?php require("liste_user.php")?>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="admin.css">
@@ -9,7 +10,7 @@
             <div class="titre">
                     <h1>UPDATE</h1>
                 </div>
-                <div class="gestion">
+                <div id="gestion1">
                 <form action="page_admin.php" method="POST"> <!-- affichage de la partie update -->
                         <p>modifier un véhicule :</p>
                          <p>nom :
@@ -51,13 +52,17 @@
                  
                 
             </div>
+            <div>
+            <a href="../index/index.php"><button class="bouton">retour à l'acceuil</button></a>
             </div>
+            </div>
+            
             <div id="delete" align="center">
                 <div class="titre">
                     <h1>DELETE</h1>
                 </div>
-                <div class="gestion"> <!-- affichage de la partie delete -->
-                <?php
+                <div id="gestion2"> <!-- affichage de la partie delete -->
+                    <?php
                             try {
                                 $base = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
                                 $DonneeBruteUser = $base->query("select * from voitures");
@@ -69,40 +74,79 @@
                                 catch(exception $e) {
                                 $e->getMessage();
                                 }
+                                if (isset($_POST["cars"])){
+                            
+                                    foreach($_POST['cars'] as $idUser){
+                                       
+                                $j=0;
+                                    foreach ($TabUser as $objetUser) {
+                                        if ($objetUser->getIdvoitures()== $idUser){
+                                            $objetUser=new gestion();                                        
+                                            $objetUser->adminDelete($idUser);                                      
+                                            unset($TabUser[$j]) ;                                      
+                                        }    
+                                                                     
+                                    $j++;
+                                     }
+                                }echo"le vehicule a ete supprimer, veuillez recharger la page";  
+                            }
                     ?>   
 
-                        <FORM action="" method="POST">
-                        <select name="cars" id="pet-select">
-                        <?php
-                        foreach ($TabUser as $objetUser) {
-                        echo '<option value="'.$objetUser->getIdvoitures().'">'.$objetUser->getNom().'</option>';
-                        }
-                        ?>
-                        </select>
-                        <input type="submit"></input>
-                        </FORM>
-
-                    <?php                    
-                        if (isset($_POST["cars"])){
-                            
-                            foreach ($TabUser as $objetUser) {
-                            if ($objetUser->getIdvoitures()==$_POST["cars"]){
-                                $objetUser = new gestion();  //appel de la base
-                                $objetUser->adminDelete($_POST['cars']);
-                                
-                                        echo"voiture supprimée";
-                                    }
+                            <FORM action="" method="POST">
+                                <p>Qui Supprimer ?</p>
+                                <?php
+                                foreach ($TabUser as $objetUser) {
+                                echo '<p><input type="checkbox" value="'.$objetUser->getIdvoitures().'" name="cars[]" />';
+                                echo '<label for="coding">'.$objetUser->getNom().' </label></p>';
                                 }
-                        
-                            }else{echo"Aucune voiture selectionné";}
+                                ?>
+                                <input class="bouton" type="submit" value="delete"></input>
+                            </FORM>
+                    <?php
+                       
                     ?>
+                                 
                     
 
-            </div>
-            <a href="../index/index.php"><button class="bouton">retour à l'acceuil</button></a>
-            </div>
+                    
+                    -------
 
 
+
+                    <FORM action="" method="POST">
+                                <p>Qui passer admin?</p>
+                                <?php
+                                foreach ($TabUser as $objetUser) {
+                                echo '<p><input type="radio" value="'.$objetUser->getIduser().'" name="user[]" />';
+                                echo '<label for="coding">'.$objetUser->getNomuser().' </label></p>';
+                                }
+                                ?>
+                                <input type="submit" value="delete"></input>
+                            </FORM>
+                    <?php
+                        if (isset($_POST["user"])){
+                            
+                                foreach($_POST['user'] as $idUser){
+                                   
+                            $j=0;
+                                foreach ($TabUser as $objetUser) {
+                                    if ($objetUser->getIduser()== $idUser){
+                                        
+                                        $objetUser=new gestion();
+                                        
+                                        $objetUser->adminDelete($idUser);
+                                        
+                                        
+                                        unset($TabUser[$j]) ;
+                                        
+                                    }
+                                    
+                                $j++;
+                                 }
+                            }
+                        }
+
+                            ?>
 
         </body>
 </html>
