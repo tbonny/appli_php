@@ -133,7 +133,7 @@
                                 echo '<label for="coding">'.$objet_User->getNomuser().' </label></p>';
                                 }
                                 ?>
-                                <input type="submit" value="passer_admin"></input>
+                                <input type="submit" value="valider" class="bouton"></input>
                             </FORM>
                     <?php
                         if (isset($_POST["user"])){

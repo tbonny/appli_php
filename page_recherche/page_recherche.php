@@ -6,7 +6,7 @@ require ("ajout.php");
 
 <html>
     <head>
-        <title>bienvenue</title>
+        <title>Gofast_Search</title>
         <link rel="stylesheet" href="page_recherche_style.css">
         <script type="text/javascript" src="page_recherchejs.js"></script> 
     </head>

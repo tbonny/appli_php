@@ -2,6 +2,7 @@
 <?php require("admin.php");?>
 <html>
     <head>
+        <title>GoFast</title>
         <link rel="stylesheet" type="text/css" href="appli.css">
         <script type="text/javascript" src="index.js"></script> 
     </head>
@@ -37,8 +38,8 @@
             <div id="presentation" align="center"><!-- texte de presentation de l'appli-->
                 <h2><p>Bonjour, bienvenue sur notre appli de recherche de voiture</p><p>Si vous etes nouveau veuillez vous creer un compte. <p>Sinon, vous pouvez vous connecter.</p></h2>
             </div>
-            <div id="CoAdmin" align="center">  <!-- Connexion en tant qu'administrateur-->
-                <h3>ADMINS</h3>
+            <div id="CoAdmin" align="center" onclick="modif_3()">  <!-- Connexion en tant qu'administrateur-->
+                <h3 id="modif3">ADMINS</h3>
                 <form action="index.php" method="POST"> 
                 <p><label>Identifiants de Connexion</label>
                 <input type="text" name="NDC_3"/></p>
@@ -56,7 +57,6 @@
                     $admin->adminCo($_POST['NDC_3'] , $_POST['MDP_3']);
                     $isconnectUS = $admin->Compar1($_POST['NDC_3'],$_POST['MDP_3']);
                     if($isconnectUS){?><!--permets de se connecter si les identifiants sont deja présenst dans la BDD--><?php
-
                     echo"admin connectez."; 
                     
                     ?><p><input type="button" name="lien1" value="redirection" onclick="self.location.href='../page_admin/page_admin.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick></p><?php
