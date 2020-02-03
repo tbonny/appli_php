@@ -29,11 +29,12 @@ class gestion{
            }
     }
 
-    public function ajoutadmin($add) //mise à jour véhicule, appel de la base de donnée
+    public function ajoutadmin($iduser) 
     {
         try{
             $BDD = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
-            $BDD ->query('');
+            $BDD ->query('INSERT INTO Admins (Nom, Mot_de_passe) SELECT `Nom`, `Mot_de_passe` FROM Users WHERE `id_Users` = '.$iduser.'; DELETE Users WHERE `id_Users`  = '.$iduser.'');
+            $BDD ->query('DELETE Users FROM Users WHERE `id_Users`  = '.$iduser.'');
            }
 
            catch (Exception $erreur){

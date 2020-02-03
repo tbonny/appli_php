@@ -8,19 +8,19 @@ require ("ajout.php");
     <head>
         <title>bienvenue</title>
         <link rel="stylesheet" href="page_recherche_style.css">
-        <script type="text/javascript" src="page_recherchejs.js"> </script>
+        <script type="text/javascript" src="page_recherchejs.js"></script> 
     </head>
 
     <body>
         <div class = "ultradiv"> <!-- div principale -->
             <div>
             
-                <p class="title"> <text href="page_recherchejs.js" id="bienvenue" onclick="changerdiv()">BIENVENUE</text><br><img id="imgchange" src='symbole_voiture_2.jpg'  onmouseover="src='symbole_voiture_1.jpg'" onmouseout="src='symbole_voiture_2.jpg'"></p>
+                <p class="title"> <text href="page_recherchejs.js" >BIENVENUE</text><br><img id="imgchange" src='symbole_voiture_2.jpg'  onmouseover="src='symbole_voiture_1.jpg'" onmouseout="src='symbole_voiture_2.jpg'"></p>
             </div>
                 <div class="bigdiv">
                 <div id="text">
                 <a href="../index/index.php"><button class="bouton">retour à l'acceuil</button></a>
-                <p><h1>Selectionner une voiture pour afficher ses informations.</h1></p>
+                <p><h1 id="search">Selectionner une voiture pour afficher ses informations.</h1></p>
                     <?php
                             try {
                                 $base = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
@@ -35,7 +35,7 @@ require ("ajout.php");
                                 }
                     ?>   
 
-                        <FORM action="" method="POST">
+                        <FORM action="" method="POST" >
                         <select name="cars" id="pet-select">
                         <?php
                         foreach ($TabUser as $objetUser) {
@@ -43,7 +43,7 @@ require ("ajout.php");
                         }
                         ?>
                         </select>
-                        <input type="submit"></input>
+                        <input type="submit" id="button" ></input>
                         </FORM>
 
                     <?php                    

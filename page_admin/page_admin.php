@@ -90,7 +90,7 @@
                                      }
                                 }echo"le vehicule a ete supprimer, veuillez recharger la page";  
                             }
-                    ?>   
+                    ?>
 
                             <FORM action="" method="POST">
                                 <p>Qui Supprimer ?</p>
@@ -111,17 +111,29 @@
                     
                     -------
 
-
+                    <?php
+                    try {
+                                $base = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
+                                $DonneeBruteUser = $base->query("select * from Users");
+                                $Tab_User_Index = 0;
+                                while ($tab = $DonneeBruteUser->fetch()){
+                                $Tab_User[$Tab_User_Index++] = new user($tab['id_Users'],$tab['Nom']);
+                                    }
+                                }
+                                    catch(exception $e) {
+                                    $e->getMessage();
+                                    }
+                    ?>
 
                     <FORM action="" method="POST">
                                 <p>Qui passer admin?</p>
                                 <?php
-                                foreach ($TabUser as $objetUser) {
-                                echo '<p><input type="radio" value="'.$objetUser->getIduser().'" name="user[]" />';
-                                echo '<label for="coding">'.$objetUser->getNomuser().' </label></p>';
+                                foreach ($Tab_User as $objet_User) {
+                                echo '<p><input type="radio" value="'.$objet_User->getIduser().'" name="user[]" />';
+                                echo '<label for="coding">'.$objet_User->getNomuser().' </label></p>';
                                 }
                                 ?>
-                                <input type="submit" value="delete"></input>
+                                <input type="submit" value="passer_admin"></input>
                             </FORM>
                     <?php
                         if (isset($_POST["user"])){
@@ -129,12 +141,12 @@
                                 foreach($_POST['user'] as $idUser){
                                    
                             $j=0;
-                                foreach ($TabUser as $objetUser) {
-                                    if ($objetUser->getIduser()== $idUser){
+                                foreach ($Tab_User as $objet_User) {
+                                    if ($objet_User->getIduser()== $idUser){
                                         
-                                        $objetUser=new gestion();
+                                        $objet_User=new gestion();
                                         
-                                        $objetUser->adminDelete($idUser);
+                                        $objet_User->ajoutadmin($idUser);
                                         
                                         
                                         unset($TabUser[$j]) ;
