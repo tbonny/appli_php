@@ -1,5 +1,5 @@
 function search(){
-    var element = document.getElementById('search');
-    element.innerHTML='voiture selectionner';
+    var element = document.getElementsByName('search');
+    onclick = element.innerHTML='voiture selectionner';
 
 }

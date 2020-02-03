@@ -20,7 +20,7 @@ require ("ajout.php");
                 <div class="bigdiv">
                 <div id="text">
                 <a href="../index/index.php"><button class="bouton">retour à l'acceuil</button></a>
-                <p><h1 id="search">Selectionner une voiture pour afficher ses informations.</h1></p>
+                <p><h1 name="search">Selectionner une voiture pour afficher ses informations.</h1></p>
                     <?php
                             try {
                                 $base = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
@@ -45,7 +45,7 @@ require ("ajout.php");
                         </select>
                         <input type="submit" id="button" ></input>
                         </FORM>
-                        
+
                     <?php                    
                         if (isset($_POST["cars"])){
                             
