@@ -3,12 +3,13 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="appli.css">
+        <script type="text/javascript" src="index.js"></script> 
     </head>
         <body>
             <div id="connexion">
             <div id="left">
-            <div class="CoUsers" align="center"> <!-- Creation d'un nouveau compte client de base-->
-                <h1>Creer votre compte</h1> 
+            <div class="CoUsers" align="center" onclick="modif_1()" > <!-- Creation d'un nouveau compte client de base-->
+                <h1 id="modif1">Creer votre compte</h1> 
                 <form action="index.php" method="POST"> 
                 <p><label><h3>Nouvel Identifiant</h3></label>
                 <input type="text" name="NDC_1"/></p>
@@ -71,8 +72,8 @@
             
             </div>
             <div id="right">
-            <div class="CoUsers" align="center">  <!-- Connexion client de base-->
-                <h1>Vous connectez</h1>
+            <div class="CoUsers" align="center" onclick="modif_2()">  <!-- Connexion client de base-->
+                <h1 id="modif2">Vous connectez</h1>
                 <form action="index.php" method="POST"> 
                 <p><label><h3>Identifiants de Connexion</h3></label>
                 <input type="text" name="NDC_2"/></p>
