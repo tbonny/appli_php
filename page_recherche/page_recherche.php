@@ -45,7 +45,7 @@ require ("ajout.php");
                         </select>
                         <input type="submit" id="button" ></input>
                         </FORM>
-
+                        
                     <?php                    
                         if (isset($_POST["cars"])){
                             
@@ -55,13 +55,10 @@ require ("ajout.php");
                                     $objetUser->afficherinfo();
                                     $objetUser->afficherimage();
                                 }
-                            }
-                        
-                            }else{echo"Aucune voiture selectionné";}
+                            }  
+                        }else{echo"Aucune voiture selectionné";}
                     ?>
                 </div>
-                
-
                     <div class="bigdiv2"> <!-- ajouter un vehicule -->
                     <form action="page_recherche.php" method="POST"> <!-- on recupere les infos du nouveau vehicule -->
                         <p>insérer un nouveau véhicule :</p>
@@ -86,12 +83,10 @@ require ("ajout.php");
                         if (isset ($_POST ['nom']) && !empty($_POST ['nom']) && ($_POST ['marque']) && !empty($_POST ['marque']) && ($_POST ['date_constru']) && !empty($_POST ['date_constru']) && ($_POST ['origine']) && !empty($_POST ['origine']) && ($_POST ['moteur']) && !empty($_POST ['moteur']) && ($_POST ['prix']) && !empty($_POST ['prix']) && ($_POST ['image']) && !empty($_POST ['image'])){
                             $ajout = new ajout();
                             $ajout -> ajouter($_POST ['nom'], $_POST ['marque'], $_POST ['date_constru'], $_POST ['origine'], $_POST ['moteur'], $_POST ['prix'], $_POST ['image']);
-                        } 
+                        }
                     ?>
                     </div>
                 </div>
-
-                
         </div>
     </body>
 </html>
