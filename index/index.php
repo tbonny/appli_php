@@ -6,10 +6,13 @@
         <link rel="stylesheet" type="text/css" href="appli.css">
         <script type="text/javascript" src="index.js"></script> 
     </head>
-        <body>
+        <body onload="heure()">
             <div id="connexion">
             <div id="left">
-            <div class="CoUsers" align="center" onclick="modif_1()" > <!-- Creation d'un nouveau compte client de base-->
+            <div id="heure" align="center">
+                <h2 id="time" style="text-decoration: underline;"></h2>
+            </div>
+            <div id="inscUsers" align="center" onclick="modif_1()" > <!-- Creation d'un nouveau compte client de base-->
                 <h1 id="modif1">Creer votre compte</h1> 
                 <form action="index.php" method="POST"> 
                 <p><label><h3>Nouvel Identifiant</h3></label>
@@ -72,7 +75,7 @@
             
             </div>
             <div id="right">
-            <div class="CoUsers" align="center" onclick="modif_2()">  <!-- Connexion client de base-->
+            <div id="CoUsers" align="center" onclick="modif_2()">  <!-- Connexion client de base-->
                 <h1 id="modif2">Vous connectez</h1>
                 <form action="index.php" method="POST"> 
                 <p><label><h3>Identifiants de Connexion</h3></label>

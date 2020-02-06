@@ -86,6 +86,10 @@ require ("ajout.php");
                         }
                     ?>
                     </div>
+
+                        <button onclick="API()">do NOT touch</button>
+                        <div id="f">random</div>
+            
                 </div>
         </div>
     </body>
