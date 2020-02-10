@@ -17,8 +17,8 @@ require ("ajout.php");
             
                 <p class="title"> <text href="page_recherchejs.js" >BIENVENUE</text><br><img id="imgchange" src='symbole_voiture_2.jpg'  onmouseover="src='symbole_voiture_1.jpg'" onmouseout="src='symbole_voiture_2.jpg'"></p>
             </div>
-                <div class="bigdiv">
-                <div id="text">
+                <div class="bigdiv" >
+                <div id="text" >
                 <a href="../index/index.php"><button class="bouton">retour à l'acceuil</button></a>
                 <p><h1 name="search">Selectionner une voiture pour afficher ses informations.</h1></p>
                     <?php
@@ -36,8 +36,8 @@ require ("ajout.php");
                     ?>   
 
                         <FORM action="" method="POST" >
-                        <select name="cars" id="pet-select">
-                        <?php
+                        <select name="cars" id="pet-select" >
+                        <?php 
                         foreach ($TabUser as $objetUser) {
                         echo '<option value="'.$objetUser->getIdvoitures().'">'.$objetUser->getNom().'</option>';
                         }
@@ -86,9 +86,11 @@ require ("ajout.php");
                         }
                     ?>
                     </div>
+                    <div id="api">
 
                         <button onclick="API()">do NOT touch</button>
                         <div id="f">random</div>
+                    </div>
             
                 </div>
         </div>

@@ -3,6 +3,7 @@
 <?php require("liste_user.php")?>
 <html>
     <head>
+        <title>GoFast admin</title>
         <link rel="stylesheet" type="text/css" href="admin.css">
     </head>
         <body>

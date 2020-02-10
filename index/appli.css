@@ -82,5 +82,16 @@ background-size: cover;
   
 }
 
+.bouton{
+  width:85px;
+  height:85px;
+  background:#f1f1f1;
+  box-shadow:2px 2px 8px rgb(88, 88, 88);
+  font:bold 13px Arial;
+  border-radius:50%;
+  color:rgb(192, 6, 6);
+  cursor: pointer;
+}
+
 
 

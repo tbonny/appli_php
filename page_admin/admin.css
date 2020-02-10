@@ -67,4 +67,5 @@ border-radius: 70px;
     font:bold 13px Arial;
     border-radius:50%;
     color:rgb(192, 6, 6);
+    cursor: pointer;
   }

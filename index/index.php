@@ -18,7 +18,7 @@
                 <p><label><h3>Mot De Passe</h3></label>
                 <input type="password" name="MDP_1"/></p>
                 <p> </p>
-                <input type="submit" name="valider1" value="cliquer sur valider"/><!--Formulaire de connexion-->
+                <input type="submit" name="valider1" value="valider" class="bouton"/><!--Formulaire de connexion-->
                 </form>
 <?php
                 if(empty($_POST['NDC_1']) && empty($_POST['MDP_1'])){
@@ -48,7 +48,7 @@
                 <input type="text" name="NDC_3"/></p>             
                 <p><label>Mot De Passe</label>
                 <input type="password" name="MDP_3"/></p>                
-                <input type="submit" name="valider2" value="cliquer sur valider"/><!--Formulaire de connexion-->
+                <input type="submit" name="valider2" value="valider" class="bouton"/><!--Formulaire de connexion-->
                 </form>
 <?php
                 if(empty($_POST['NDC_3']) && empty($_POST['MDP_3'])){
@@ -62,7 +62,7 @@
                     if($isconnectUS){?><!--permets de se connecter si les identifiants sont deja présenst dans la BDD--><?php
                     echo"admin connectez."; 
                     
-                    ?><p><input type="button" name="lien1" value="redirection" onclick="self.location.href='../page_admin/page_admin.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick></p><?php
+                    ?><p><input type="button" name="lien1" value="redirection" onclick="self.location.href='../page_admin/page_admin.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick class="bouton"></p><?php
                              
                     }else{ //message d'erreur si les Id et Mdp sont incorrects
                         
@@ -84,7 +84,7 @@
                 <p><label><h3>Mot De Passe</h3></label>
                 <input type="password" name="MDP_2"/></p>
                 <p> </p>
-                <input type="submit" name="valider2" value="cliquer sur valider"/><!--Formulaire de connexion-->
+                <input type="submit" name="valider2" value="valider" class="bouton"/><!--Formulaire de connexion-->
                 </form>
 <?php
                 if(empty($_POST['NDC_2']) && empty($_POST['MDP_2'])){
@@ -99,7 +99,7 @@
 
                     echo"vous etes connectez."; 
                     
-                    ?><p><input type="button" name="lien1" value="redirection" onclick="self.location.href='../page_recherche/page_recherche.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick></p><?php
+                    ?><p><input type="button" name="lien1" value="redirection" onclick="self.location.href='../page_recherche/page_recherche.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick class="bouton"></p><?php
                              
                     }else{ //meesage d'erreur si les Id et Mdp sont incorrects
                         
