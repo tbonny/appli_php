@@ -9,9 +9,6 @@
         <body onload="heure()">
             <div id="connexion">
             <div id="left">
-            <div id="heure" align="center">
-                <h2 id="time" style="text-decoration: underline;"></h2>
-            </div>
             <div id="inscUsers" align="center" onclick="modif_1()" > <!-- Creation d'un nouveau compte client de base-->
                 <h1 id="modif1">Creer votre compte</h1> 
                 <form action="index.php" method="POST"> 
@@ -41,13 +38,16 @@
             <div id="presentation" align="center"><!-- texte de presentation de l'appli-->
                 <h2><p>Bonjour, bienvenue sur notre appli de recherche de voiture</p><p>Si vous etes nouveau veuillez vous creer un compte. <p>Sinon, vous pouvez vous connecter.</p></h2>
             </div>
+            <div id="heure" align="center">
+                <h2 id="time" style="text-decoration: underline;"></h2>
+            </div>
             <div id="CoAdmin" align="center" onclick="modif_3()">  <!-- Connexion en tant qu'administrateur-->
                 <h3 id="modif3">ADMINS</h3>
                 <form action="index.php" method="POST"> 
                 <p><label>Identifiants de Connexion</label>
-                <input type="text" name="NDC_3"/></p>
+                <input type="text" name="NDC_3"/></p>             
                 <p><label>Mot De Passe</label>
-                <input type="password" name="MDP_3"/></p>
+                <input type="password" name="MDP_3"/></p>                
                 <input type="submit" name="valider2" value="cliquer sur valider"/><!--Formulaire de connexion-->
                 </form>
 <?php

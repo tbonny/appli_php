@@ -15,7 +15,7 @@ function modif_3(){
 
 var myVar = setInterval(heure, 1000);
 
-  function heure() {
+function heure() {
 
     var d = new Date();
     var n = d.getHours();
@@ -38,6 +38,8 @@ var myVar = setInterval(heure, 1000);
     }
     document.getElementById("time").innerHTML = "Heure : " + n + ":" + x + ":" + y;
 }
+
+
 
      
      
