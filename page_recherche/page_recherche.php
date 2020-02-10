@@ -13,8 +13,7 @@ require ("ajout.php");
 
     <body>
         <div class = "ultradiv"> <!-- div principale -->
-            <div>
-            
+            <div >
                 <p class="title"> <text href="page_recherchejs.js" >BIENVENUE</text><br><img id="imgchange" src='symbole_voiture_2.jpg'  onmouseover="src='symbole_voiture_1.jpg'" onmouseout="src='symbole_voiture_2.jpg'"></p>
             </div>
                 <div class="bigdiv" >
@@ -53,11 +52,12 @@ require ("ajout.php");
                             if ($objetUser->getIdvoitures()==$_POST["cars"]){
                                     $objetUser=new voitures($_POST["cars"]);
                                     $objetUser->afficherinfo();
-                                    $objetUser->afficherimage();
+                                    $objetUser->afficherimage(); 
                                 }
                             }  
                         }else{echo"Aucune voiture selectionné";}
                     ?>
+
                 </div>
                     <div class="bigdiv2"> <!-- ajouter un vehicule -->
                     <form action="page_recherche.php" method="POST"> <!-- on recupere les infos du nouveau vehicule -->
@@ -87,9 +87,8 @@ require ("ajout.php");
                     ?>
                     </div>
                     <div id="api">
-
-                        <button onclick="API()">do NOT touch</button>
-                        <div id="f">random</div>
+                        <button onclick="API()" class="bouton">do NOT touch</button>
+                        <div id="f"></div>
                     </div>
             
                 </div>

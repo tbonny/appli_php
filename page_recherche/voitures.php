@@ -1,5 +1,4 @@
 <?php
-
 class voitures {
 
     private $_nom;
@@ -89,21 +88,9 @@ class voitures {
 
     //
     public function afficherimage(){
-        echo "<img src = '".$this->getimage()."'>";
+        echo "<img src = '".$this->getimage()."' class='img'>";
     }
 
-    public function randomcar(){
-       $randomcar = require("api.php");
-
-        try{
-            $BDD = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
-            $BDD ->query('SELECT * from voitures');
-           }
-
-           catch (Exception $erreur){
-            echo 'Erreur : '.$erreur ->getMessage();
-           }
-    }
 }
 ?>
 

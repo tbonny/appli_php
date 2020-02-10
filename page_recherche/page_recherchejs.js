@@ -2,7 +2,7 @@ function API() {
     fetch('api.php').then ((resp)=>resp.json()).then (function(data){
         //Data est la réponse HTTP de l'API
         console.log(data);
-        UpdateDiv("f", data[0]);
+        UpdateDiv("f", data);
     })
     .catch(function(error){
         console.log(error);
