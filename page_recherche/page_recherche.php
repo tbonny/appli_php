@@ -11,7 +11,7 @@ require ("ajout.php");
         <script type="text/javascript" src="page_recherchejs.js"></script> 
     </head>
 
-    <body>
+    <body onload="API()"> 
         <div class = "ultradiv"> <!-- div principale -->
             <div >
                 <p class="title"> <text href="page_recherchejs.js" >BIENVENUE</text><br><img id="imgchange" src='symbole_voiture_2.jpg'  onmouseover="src='symbole_voiture_1.jpg'" onmouseout="src='symbole_voiture_2.jpg'"></p>
@@ -87,8 +87,8 @@ require ("ajout.php");
                     ?>
                     </div>
                     <div id="api">
-                        <button onclick="API()" class="bouton">do NOT touch</button>
-                        <div id="f"></div>
+                         <button onclick="API()" class="bouton">do NOT touch</button> 
+                        <div id="f" align="center"></div>
                     </div>
             
                 </div>

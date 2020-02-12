@@ -12,3 +12,5 @@ function API() {
 function UpdateDiv(id, text){
     var e =document.getElementById(id).innerHTML = text;
 }
+
+var myVar = setInterval(API, 1000);
