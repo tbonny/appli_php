@@ -77,12 +77,12 @@ class voitures {
     //
     public function afficherinfo(){
 
-        echo "<p> nom du véhicule : ".$this->getnom()."</p>";
-        echo "<p> marque du véhicule : ".$this->getmarque()."</p>";
-        echo "<p> date de construction du véhicule : ".$this->getdate()."</p>";
-        echo "<p> pays d'origine du véhicule : ".$this->getorigine()."</p>";
-        echo "<p> type de moteur du véhicule : ".$this->getmoteur()."</p>";
-        echo "<p> prix du véhicule : ".$this->getprix()." €</p>";
+        echo "<p><h2> nom du véhicule : ".$this->getnom()."</h2></p>";
+        echo "<p><h2> marque du véhicule : ".$this->getmarque()."</h2></p>";
+        echo "<p><h2> date de construction du véhicule : ".$this->getdate()."</h2></p>";
+        echo "<p><h2> pays d'origine du véhicule : ".$this->getorigine()."</h2></p>";
+        echo "<p><h2> type de moteur du véhicule : ".$this->getmoteur()."</h2></p>";
+        echo "<p><h2> prix du véhicule : ".$this->getprix()." €</h2></p>";
         
     }
 

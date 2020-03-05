@@ -5,12 +5,83 @@
     <head>
         <title>GoFast admin</title>
         <link rel="stylesheet" type="text/css" href="admin.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="Bugatti_logo.png" />   
     </head>
         <body>
-            <div id="update" align="center">
-            <div class="titre">
-                    <h1>UPDATE</h1>
+
+        <div class="col-md-12 presentation" align="center">
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-12 heure" align="center">
+                    <div class="titre">
+                        <h1>Supprimer une voiture</h1>
+                    </div>
                 </div>
+                
+                <div class="col-md-12 heure" align="center">
+                    <div id="gestion2"> <!-- affichage de la partie delete -->
+                        <?php
+                                try {
+                                    $base = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
+                                    $DonneeBruteUser = $base->query("select * from voitures");
+                                    $TabUserIndex = 0;
+                                    while ($tab = $DonneeBruteUser->fetch()){
+                                    $TabUser[$TabUserIndex++] = new cars($tab['id_voiture'],$tab['nom']);
+                                    }
+                                    }
+                                    catch(exception $e) {
+                                    $e->getMessage();
+                                    }
+                                    if (isset($_POST["cars"])){
+                                
+                                        foreach($_POST['cars'] as $idUser){
+                                        
+                                    $j=0;
+                                        foreach ($TabUser as $objetUser) {
+                                            if ($objetUser->getIdvoitures()== $idUser){
+                                                $objetUser=new gestion();                                        
+                                                $objetUser->adminDelete($idUser);                                      
+                                                unset($TabUser[$j]) ;                                      
+                                            }    
+                                                                        
+                                        $j++;
+                                        }
+                                    }echo"le vehicule a ete supprimer, veuillez recharger la page";  
+                                }
+                        ?>
+                                <FORM action="" method="POST">
+                                        <p>Qui Supprimer ?</p>
+                                        <?php
+                                        foreach ($TabUser as $objetUser) {
+                                        echo '<p><input type="checkbox" value="'.$objetUser->getIdvoitures().'" name="cars[]" />';
+                                        echo '<label for="coding">'.$objetUser->getNom().' </label></p>';
+                                        }
+                                        ?>
+                                        <input class="bouton" type="submit" value="delete"></input>
+                                    </FORM>
+                            <?php
+                            
+                            ?> 
+                    </div>
+                </div>
+
+                <div class="col-md-12 heure" align="center">
+                    <div class="titre">
+                        <h1>Mettre à jour la BDD</h1>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 heure" align="center">
                 <div id="gestion1">
                 <form action="page_admin.php" method="POST"> <!-- affichage de la partie update -->
                         <p>modifier un véhicule :</p>
@@ -52,62 +123,17 @@
                     ?>
                  
                 
-            </div>
-            <div>
-            <a href="../index/index.php"><button class="bouton">retour à l'acceuil</button></a>
-            </div>
-            </div>
-            
-            <div id="delete" align="center">
-                <div class="titre">
-                    <h1>DELETE</h1>
+                    </div>
                 </div>
-                <div id="gestion2"> <!-- affichage de la partie delete -->
-                    <?php
-                            try {
-                                $base = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
-                                $DonneeBruteUser = $base->query("select * from voitures");
-                                $TabUserIndex = 0;
-                                while ($tab = $DonneeBruteUser->fetch()){
-                                $TabUser[$TabUserIndex++] = new cars($tab['id_voiture'],$tab['nom']);
-                                }
-                                }
-                                catch(exception $e) {
-                                $e->getMessage();
-                                }
-                                if (isset($_POST["cars"])){
-                            
-                                    foreach($_POST['cars'] as $idUser){
-                                       
-                                $j=0;
-                                    foreach ($TabUser as $objetUser) {
-                                        if ($objetUser->getIdvoitures()== $idUser){
-                                            $objetUser=new gestion();                                        
-                                            $objetUser->adminDelete($idUser);                                      
-                                            unset($TabUser[$j]) ;                                      
-                                        }    
-                                                                     
-                                    $j++;
-                                     }
-                                }echo"le vehicule a ete supprimer, veuillez recharger la page";  
-                            }
-                    ?>
 
-                            <FORM action="" method="POST">
-                                <p>Qui Supprimer ?</p>
-                                <?php
-                                foreach ($TabUser as $objetUser) {
-                                echo '<p><input type="checkbox" value="'.$objetUser->getIdvoitures().'" name="cars[]" />';
-                                echo '<label for="coding">'.$objetUser->getNom().' </label></p>';
-                                }
-                                ?>
-                                <input class="bouton" type="submit" value="delete"></input>
-                            </FORM>
-                    <?php
-                       
-                    ?> 
-                    -------
-
+                <div class="col-md-12 heure" align="center">
+                    <div class="titre">
+                        <h1>Ajouter un admin</h1>
+                    </div>
+                </div>
+                
+                <div class="col-md-12 heure" align="center">
+                <div id="gestion3">                
                     <?php
                     try {
                                 $base = new PDO('mysql:host=192.168.64.116; dbname=AppliWebPHP; charset=utf8','admin', 'admin');
@@ -156,6 +182,11 @@
                         }
 
                             ?>
-
+                    </div>
+                </div> 
+                
+                <div id="text" class="col-md-12" align="center">
+                    <a href="../index/index.php"><button class="bouton">retour à l'accueil</button></a>
+                </div>
         </body>
 </html>

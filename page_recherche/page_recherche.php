@@ -8,17 +8,27 @@ require ("ajout.php");
     <head>
         <title>Gofast_Search</title>
         <link rel="stylesheet" href="page_recherche_style.css">
-        <script type="text/javascript" src="page_recherchejs.js"></script> 
+        <script type="text/javascript" src="page_recherchejs.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+        <link rel="shortcut icon" type="image/x-icon" href="Bugatti_logo.png" />
     </head>
 
     <body onload="API()"> 
+
+    <div class="col-md-12 presentation" align="center">
+
+    </div>
+
+    <div class="container">
         <div class = "ultradiv"> <!-- div principale -->
-            <div >
-                <p class="title"> <text href="page_recherchejs.js" >BIENVENUE</text><br><img id="imgchange" src='symbole_voiture_2.jpg'  onmouseover="src='symbole_voiture_1.jpg'" onmouseout="src='symbole_voiture_2.jpg'"></p>
-            </div>
+        <div class="col-md-12" align="center">
+            <p><h1>Bienvenue</></p>
+        </div>
                 <div class="bigdiv" >
-                <div id="text" >
-                <a href="../index/index.php"><button class="bouton">retour à l'acceuil</button></a>
+                <dv id="text" class="col-md-12" align="center">
                 <p><h1 name="search">Selectionner une voiture pour afficher ses informations.</h1></p>
                     <?php
                             try {
@@ -35,7 +45,7 @@ require ("ajout.php");
                     ?>   
 
                         <FORM action="" method="POST" >
-                        <select name="cars" id="pet-select" >
+                        <select name="cars" class="custom-select" style="width:200px;">
                         <?php 
                         foreach ($TabUser as $objetUser) {
                         echo '<option value="'.$objetUser->getIdvoitures().'">'.$objetUser->getNom().'</option>';
@@ -52,6 +62,7 @@ require ("ajout.php");
                             if ($objetUser->getIdvoitures()==$_POST["cars"]){
                                     $objetUser=new voitures($_POST["cars"]);
                                     $objetUser->afficherinfo();
+                                ?><p> </p><?php
                                     $objetUser->afficherimage(); 
                                 }
                             }  
@@ -59,7 +70,8 @@ require ("ajout.php");
                     ?>
 
                 </div>
-                    <div class="bigdiv2"> <!-- ajouter un vehicule -->
+                    <div class="col-md-12">
+                    <div class="bigdiv2" > <!-- ajouter un vehicule -->
                     <form action="page_recherche.php" method="POST"> <!-- on recupere les infos du nouveau vehicule -->
                         <p>insérer un nouveau véhicule :</p>
                          <p>nom :
@@ -86,12 +98,20 @@ require ("ajout.php");
                         }
                     ?>
                     </div>
-                    <div id="api">
+                </div>
+                    <div id="api" class="col-md-12" align="center">
                          <button onclick="API()" class="bouton">do NOT touch</button> 
                         <div id="f" align="center"></div>
                     </div>
+
+                    
+
             
-                </div>
+                
         </div>
+       </div> <div id="text" class="col-md-12" align="center">
+                <a href="../index/index.php"><button class="bouton">retour à l'accueil</button></a>
+        </div>
+    </div>
     </body>
 </html>

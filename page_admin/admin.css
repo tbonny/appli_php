@@ -55,7 +55,11 @@ border-radius: 70px;
 
     text-decoration: underline red;
     margin-top: 10%;
-    width: 100%;
+    width: 50%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.250);
+    color: black;
+    border-radius: 15%;
     
   }
 
@@ -69,3 +73,31 @@ border-radius: 70px;
     color:rgb(192, 6, 6);
     cursor: pointer;
   }
+ 
+  #gestion3{
+
+    float: left;
+    background-color: rgb(48, 98, 148);
+    margin-top: 5%;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    border:5px solid black;
+    border-radius: 70px;
+    margin-bottom: 30px;
+    
+  }    
+
+  .presentation{
+
+    color: white;
+    background-image: url(Screenshot_2.png);
+    background-size: cover;
+    box-shadow:20px 20px 40px rgb(88, 88, 88);
+    border-radius:15%;
+    max-width: 100%;
+    height: 17%;
+    background-position-x: center;
+    background-color: rgba(0, 0, 0, 0.568); 
+    
+      
+    }

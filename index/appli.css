@@ -1,97 +1,86 @@
 html {height:100%;}
 body {height:100%;
 padding: 0%; margin: 0%;
-background-color: black;
-background-image: url(forza-horizon.jpg);
+background-image: url(bugatti-la-voiture-noire-front-uhd-4k-wallpaper.jpg);
 width: auto;
 height: auto;
 background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position-x: center;
+
 
 }
-*{
-  font-family:'Times New Roman', Times, serif;
-}
-#left{
-  float: left;
-  width: 32%;
-  height: 100%;
-}
-#right{
-  float: right;
-  width: 32%;
-  height: 100%;
 
-}
-#center{
-  float: left;
-  width: 36%;
-  height: 100%;
+.presentation{
 
-}
-#inscUsers{
-
-  float: left;
-  background-color: rgb(31, 193, 199);
-  margin-top: 40%;
-  color: rgb(0, 0, 0);
-  width: 100%;
-  border-radius: 70px;
- 
+  color: white;
+  background-image: url(Screenshot_2.png);
+  background-size: cover;
+  box-shadow:20px 20px 40px rgb(88, 88, 88);
+  border-radius:15%;
+  max-width: 100%;
+  height: 17%;
+  background-position-x: center;
+  
+  
+    
 }
 
-#CoUsers{
+.admin{
 
-  float: left;
-  background-color: rgb(31, 193, 199);
-  margin-top: 40%;
-  color: rgb(0, 0, 0);
-  width: 100%;
-  border-radius: 70px;
- 
+  margin-top: 4%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.568); 
+
 }
-#presentation{
 
-  float: left;
-  background-color: rgb(31, 193, 199);
-  margin-top: 2%;
-  width: 100%;
-  border-radius: 70px;
+.new{
+
+  margin-top: 4%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.568);
+  
+  
   
 }
-#CoAdmin{
 
-  background-color: rgb(31, 193, 199);
-  color: rgb(0, 0, 0);
-  bottom: 0;
-  margin-top: 40%;
-  width: 100%;
-  float: left;
-  border-radius: 70px;
+.connexion{
+
+  margin-top: 4%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.568);  
 
 }
 
-#heure{
+.heure{
 
-  float: left;
-  background-color: rgb(31, 193, 199);
-  margin-top: 25%;
-  margin-left: 25%;
-  width: 50%;
-  height: auto;
-  border-radius: 30px;
+  margin-top: 1%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.568);
   
+ 
 }
 
 .bouton{
   width:85px;
-  height:85px;
-  background:#f1f1f1;
+  height:40px;
+  background:#08a4af;
   box-shadow:2px 2px 8px rgb(88, 88, 88);
   font:bold 13px Arial;
-  border-radius:50%;
+  border-radius:15%;
   color:rgb(192, 6, 6);
   cursor: pointer;
 }
+
+.text{
+
+  color: rgb(0, 0, 0);
+ 
+
+}
+
+
 
 
 

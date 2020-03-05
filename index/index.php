@@ -1,22 +1,39 @@
 <?php require("user.php");?>
 <?php require("admin.php");?>
 <html>
-    <head>
-        <title>GoFast</title>
-        <link rel="stylesheet" type="text/css" href="appli.css">
-        <script type="text/javascript" src="index.js"></script> 
-    </head>
-        <body onload="heure()">
-            <div id="connexion">
-            <div id="left">
-            <div id="inscUsers" align="center" onclick="modif_1()" > <!-- Creation d'un nouveau compte client de base-->
-                <h1 id="modif1">Creer votre compte</h1> 
+<head>
+  <title>GoFast.com</title>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="index.js"></script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="appli.css">
+  <link rel="shortcut icon" type="image/x-icon" href="Bugatti_logo.png" />
+</head>
+<body onload="heure()">
+
+<div class="col-md-12 presentation" align="center">
+
+</div>
+  
+<div class="container">
+  <div class="row">
+      
+    <div class="col-md-12 heure" align="center">
+
+      <h2 id="time" style="text-decoration: underline;"></h2>
+      
+    </div>
+    <div class="col-md-4 new" align="center">
+    <h1 id="modif1">Creer votre compte</h1> 
                 <form action="index.php" method="POST"> 
                 <p><label><h3>Nouvel Identifiant</h3></label>
-                <input type="text" name="NDC_1"/></p>
+                <input type="text" name="NDC_1" class="text"/></p>
                 <p> </p> 
                 <p><label><h3>Mot De Passe</h3></label>
-                <input type="password" name="MDP_1"/></p>
+                <input type="password" name="MDP_1" class="text"/></p>
                 <p> </p>
                 <input type="submit" name="valider1" value="valider" class="bouton"/><!--Formulaire de connexion-->
                 </form>
@@ -32,57 +49,18 @@
 
                 }
 ?>        
-            </div>
-            </div>
-            <div id="center">
-            <div id="presentation" align="center"><!-- texte de presentation de l'appli-->
-                <h2><p>Bonjour, bienvenue sur notre appli de recherche de voiture</p><p>Si vous etes nouveau veuillez vous creer un compte. <p>Sinon, vous pouvez vous connecter.</p></h2>
-            </div>
-            <div id="heure" align="center">
-                <h2 id="time" style="text-decoration: underline;"></h2>
-            </div>
-            <div id="CoAdmin" align="center" onclick="modif_3()">  <!-- Connexion en tant qu'administrateur-->
-                <h3 id="modif3">ADMINS</h3>
-                <form action="index.php" method="POST"> 
-                <p><label>Identifiants de Connexion</label>
-                <input type="text" name="NDC_3"/></p>             
-                <p><label>Mot De Passe</label>
-                <input type="password" name="MDP_3"/></p>                
-                <input type="submit" name="valider2" value="valider" class="bouton"/><!--Formulaire de connexion-->
-                </form>
-<?php
-                if(empty($_POST['NDC_3']) && empty($_POST['MDP_3'])){
-                
+    </div>
 
-                    }else{
-                    
-                    $admin = new admin();
-                    $admin->adminCo($_POST['NDC_3'] , $_POST['MDP_3']);
-                    $isconnectUS = $admin->Compar1($_POST['NDC_3'],$_POST['MDP_3']);
-                    if($isconnectUS){?><!--permets de se connecter si les identifiants sont deja présenst dans la BDD--><?php
-                    echo"admin connectez."; 
-                    
-                    ?><p><input type="button" name="lien1" value="redirection" onclick="self.location.href='../page_admin/page_admin.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick class="bouton"></p><?php
-                             
-                    }else{ //message d'erreur si les Id et Mdp sont incorrects
-                        
-                        echo"Identifiants ou mot de passe incorrects, veuillez reessayer.";
 
-                    }
-                }
-?>        
-            </div>
-            
-            </div>
-            <div id="right">
-            <div id="CoUsers" align="center" onclick="modif_2()">  <!-- Connexion client de base-->
-                <h1 id="modif2">Vous connectez</h1>
+    
+    <div class="col-md-4 connexion" align="center">
+    <h1 id="modif2">Vous connectez</h1>
                 <form action="index.php" method="POST"> 
                 <p><label><h3>Identifiants de Connexion</h3></label>
-                <input type="text" name="NDC_2"/></p>
+                <input type="text" name="NDC_2" class="text"/></p>
                 <p> </p> 
                 <p><label><h3>Mot De Passe</h3></label>
-                <input type="password" name="MDP_2"/></p>
+                <input type="password" name="MDP_2" class="text"/></p>
                 <p> </p>
                 <input type="submit" name="valider2" value="valider" class="bouton"/><!--Formulaire de connexion-->
                 </form>
@@ -108,8 +86,47 @@
                     }
                 }
 ?>        
-            </div>
-            </div>
-            </div>
-        </body>
+    </div>
+    
+
+    <div class="col-md-4 admin" align="center">
+
+    <h1 id="modif3">Admins</h1>
+    <form action="index.php" method="POST"> 
+                <p><label><h3>Identifiants de Connexion</h3></label>
+                <input type="text" name="NDC_3" class="text"/></p>
+                <p> </p> 
+                <p><label><h3>Mot De Passe</h3></label>
+                <input type="password" name="MDP_3" class="text"/></p>
+                <p> </p>
+                <input type="submit" name="valider2" value="valider" class="bouton"/><!--Formulaire de connexion-->
+                </form>
+<?php
+                if(empty($_POST['NDC_3']) && empty($_POST['MDP_3'])){
+                
+
+                    }else{
+                    
+                    $admin = new admin();
+                    $admin->adminCo($_POST['NDC_3'] , $_POST['MDP_3']);
+                    $isconnectUS = $admin->Compar1($_POST['NDC_3'],$_POST['MDP_3']);
+                    if($isconnectUS){?><!--permets de se connecter si les identifiants sont deja présenst dans la BDD--><?php
+                    echo"admin connectez."; 
+                    
+                    ?><p><input type="button" name="lien1" value="redirection" onclick="self.location.href='../page_admin/page_admin.php'" style="background-color:#3cb371" style="color:white; font-weight:bold"onclick class="bouton"></p><?php
+                             
+                    }else{ //message d'erreur si les Id et Mdp sont incorrects
+                        
+                        echo"Identifiants ou mot de passe incorrects, veuillez reessayer.";
+
+                    }
+                }
+?>        
+      
+    </div>
+
+  </div>
+</div>
+
+</body>
 </html>
