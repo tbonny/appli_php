@@ -70,7 +70,7 @@ require ("ajout.php");
                     ?>
 
                 </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12" >
                     <div class="bigdiv2" > <!-- ajouter un vehicule -->
                     <form action="page_recherche.php" method="POST"> <!-- on recupere les infos du nouveau vehicule -->
                         <p>insérer un nouveau véhicule :</p>
