@@ -55,12 +55,12 @@
                                     }echo"le vehicule a ete supprimer, veuillez recharger la page";  
                                 }
                         ?>
-                                <FORM action="" method="POST">
+                                <FORM action="" method="POST" >
                                         <p>Qui Supprimer ?</p>
                                         <?php
                                         foreach ($TabUser as $objetUser) {
-                                        echo '<p><input type="checkbox" value="'.$objetUser->getIdvoitures().'" name="cars[]" />';
-                                        echo '<label for="coding">'.$objetUser->getNom().' </label></p>';
+                                        echo '<p><h4><input type="checkbox" value="'.$objetUser->getIdvoitures().'" name="cars[]" />';
+                                        echo '<label for="coding">'.$objetUser->getNom().' </label></h4></p>';
                                         }
                                         ?>
                                         <input class="bouton" type="submit" value="delete"></input>
@@ -82,20 +82,20 @@
                 <div id="gestion1">
                 <form action="page_admin.php" method="POST"> <!-- affichage de la partie update -->
                         <p>modifier un véhicule :</p>
-                         <p>nom :
-                         <input type="text" name="nom"/></p>
-                         <p>marque :
-                         <input type="text" name="marque"/></p>
-                         <p>date de construction :
-                         <input type="text" name="date_constru"/></p>
-                         <p>pays d'origine :
-                         <input type="text" name="origine"/></p>
-                         <p>type de moteur :
-                         <input type="text" name="moteur"/></p>
-                         <p>prix :
-                         <input type="text" name="prix"/></p>
-                         <p>liens image :
-                         <input type="text" name="image"/></p>
+                         <p><h4>Nom :
+                         <input type="text" name="nom"/></h4></p>
+                         <p><h4>Marque :
+                         <input type="text" name="marque"/></h4></p>
+                         <p><h4>Date de construction :
+                         <input type="text" name="date_constru"/></h4></p>
+                         <p><h4>Pays d'origine :
+                         <input type="text" name="origine"/></h4></p>
+                         <p><h4>Type de moteur :
+                         <input type="text" name="moteur"/></h4></p>
+                         <p><h4>Prix :
+                         <input type="text" name="prix"/></h4></p>
+                         <p><h4>Liens image :
+                         <input type="text" name="image"/></h4></p>
 
                          <input class="bouton" type="submit" name="ajouter" value="modifier"/>
                     </form>
@@ -149,8 +149,8 @@
                                 <p>Qui passer admin?</p>
                                 <?php
                                 foreach ($Tab_User as $objet_User) {
-                                echo '<p><input type="radio" value="'.$objet_User->getIduser().'" name="user[]" />';
-                                echo '<label for="coding">'.$objet_User->getNomuser().' </label></p>';
+                                echo '<p><h4><input type="radio" value="'.$objet_User->getIduser().'" name="user[]" />';
+                                echo '<label for="coding">'.$objet_User->getNomuser().' </label></h4></p>';
                                 }
                                 ?>
                                 <input type="submit" value="valider" class="bouton"></input>
